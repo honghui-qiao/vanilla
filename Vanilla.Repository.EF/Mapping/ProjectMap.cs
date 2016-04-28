@@ -10,6 +10,7 @@ namespace Vanilla.Repository.EF.Mapping
         {
             ToTable("Project");
 
+
             HasKey(c => c.Id)
                 .Property(c => c.Id)
                 .HasColumnName("ProjectId")
