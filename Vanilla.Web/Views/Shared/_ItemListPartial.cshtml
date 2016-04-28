@@ -1,0 +1,29 @@
+﻿@using Vanilla.Service.ViewModel;
+
+@model ItemListViewModel
+
+<table class="tbl" border="0">
+    <thead>
+        <tr>
+            <th class="first cCol w40">
+                <input id="ckb-all" title="Check All" type="checkbox" />
+            </th>
+            <th class="cCol w60">ID</th>
+            <th>Title</th>
+            <th class="last">Added Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model.Items)
+        {
+            <tr>
+                <td class="cCol">
+                    <input id="ckb@(i.ItemId)" type="checkbox" />
+                </td>
+                <td class="cCol">@i.ItemId</td>
+                <td>@i.Title</td>
+                <td>@i.AddedDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

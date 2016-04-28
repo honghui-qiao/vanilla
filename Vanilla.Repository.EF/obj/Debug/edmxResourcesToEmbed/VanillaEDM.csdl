@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Vanilla.Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VanillaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Vanilla.Model.Category" />
+    <EntitySet Name="Comments" EntityType="Vanilla.Model.Comment" />
+    <EntitySet Name="Items" EntityType="Vanilla.Model.Item" />
+    <AssociationSet Name="FK_Category_Self" Association="Vanilla.Model.FK_Category_Self">
+      <End Role="content_Category" EntitySet="Categories" />
+      <End Role="content_Category1" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Category" Association="Vanilla.Model.FK_Item_Category">
+      <End Role="content_Category" EntitySet="Categories" />
+      <End Role="content_Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Item" Association="Vanilla.Model.FK_Comment_Item">
+      <End Role="content_Item" EntitySet="Items" />
+      <End Role="content_Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Self" Association="Vanilla.Model.FK_Comment_Self">
+      <End Role="content_Comment" EntitySet="Comments" />
+      <End Role="content_Comment1" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ParentCategoryID" Type="Int32" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="content_Category1" Relationship="Vanilla.Model.FK_Category_Self" FromRole="content_Category" ToRole="content_Category1" />
+    <NavigationProperty Name="content_Category2" Relationship="Vanilla.Model.FK_Category_Self" FromRole="content_Category1" ToRole="content_Category" />
+    <NavigationProperty Name="content_Item" Relationship="Vanilla.Model.FK_Item_Category" FromRole="content_Category" ToRole="content_Item" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ParentCommentID" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="content_Item" Relationship="Vanilla.Model.FK_Comment_Item" FromRole="content_Comment" ToRole="content_Item" />
+    <NavigationProperty Name="content_Comment1" Relationship="Vanilla.Model.FK_Comment_Self" FromRole="content_Comment" ToRole="content_Comment1" />
+    <NavigationProperty Name="content_Comment2" Relationship="Vanilla.Model.FK_Comment_Self" FromRole="content_Comment1" ToRole="content_Comment" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Abstract" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="content_Category" Relationship="Vanilla.Model.FK_Item_Category" FromRole="content_Item" ToRole="content_Category" />
+    <NavigationProperty Name="content_Comment" Relationship="Vanilla.Model.FK_Comment_Item" FromRole="content_Item" ToRole="content_Comment" />
+  </EntityType>
+  <Association Name="FK_Category_Self">
+    <End Role="content_Category" Type="Vanilla.Model.Category" Multiplicity="0..1" />
+    <End Role="content_Category1" Type="Vanilla.Model.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="content_Category1">
+        <PropertyRef Name="ParentCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Category">
+    <End Role="content_Category" Type="Vanilla.Model.Category" Multiplicity="0..1" />
+    <End Role="content_Item" Type="Vanilla.Model.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="content_Item">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Item">
+    <End Role="content_Item" Type="Vanilla.Model.Item" Multiplicity="1" />
+    <End Role="content_Comment" Type="Vanilla.Model.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="content_Comment">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Self">
+    <End Role="content_Comment" Type="Vanilla.Model.Comment" Multiplicity="0..1" />
+    <End Role="content_Comment1" Type="Vanilla.Model.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="content_Comment1">
+        <PropertyRef Name="ParentCommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

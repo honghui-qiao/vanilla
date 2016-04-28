@@ -1,0 +1,144 @@
+﻿/* @group general styles
+    resets, links, heading, other elements
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+    blockquote:before, blockquote:after,
+    q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+th, td { padding: 1.5px 5px; vertical-align: middle; }
+
+body { font: 12px "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; }
+
+a:link, a:visited { text-decoration: none; color: #333; }
+a:hover { color: #4183c4; }
+
+h1, h2, h3, h4 { font-weight: bold; }
+h1 { font-size: 20px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+
+.clearFix:after { content: "."; height: 0; visibility: hidden; display: block; clear: both; }
+
+
+
+
+/* @group helper styles
+    form, notifications, errors
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.selected { font-weight: bold; }
+.w1 { width: 10px; }
+.w2 { width: 40px; }
+.w3 { width: 70px; }
+.w4 { width: 100px; }
+.w5 { width: 130px; }
+.w6 { width: 160px; }
+.w7 { width: 190px; }
+.w8 { width: 220px; }
+.w9 { width: 250px; }
+.w10 { width: 280px; }
+.w11 { width: 310px; }
+.w12 { width: 340px; }
+.w13 { width: 370px; }
+.w14 { width: 400px; }
+.w15 { width: 430px; }
+.w16 { width: 460px; }
+.w17 { width: 490px; }
+.w18 { width: 520px; }
+.w19 { width: 550px; }
+.w20 { width: 580px; }
+.w11 { width: 610px; }
+
+.w40 { width: 40px; }
+.w60 { width: 60px; }
+
+
+
+
+/* @group page structure
+    header, footer, navigation, layout
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.header { height: 35px; line-height: 35px; background: #555; }
+    .header a { color: #fff; }
+
+.nav li { float: left; }
+    .nav li a { display: block; padding: 0 15px; font-size: 14px; }
+        .nav li a:hover { background: #65aefe; }
+
+.twoColWrapper { padding-left: 180px; position: relative; }
+    .twoColWrapper .side { width: 179px; border-right: solid 1px #f5f5f5; top: 0; left: 0; position: absolute; }
+
+.viewPanel { position: relative; overflow: hidden; }
+    .viewPanel .left { position: absolute; left: 0; top: 0; bottom: 0; }
+    .viewPanel .top { position: absolute; top: 0; left: 0; right: 0; }
+    .viewPanel .btm { position: absolute; bottom: 0; left: 0; right: 0; }
+    .viewPanel .right { position: absolute; right: 0; top: 0; bottom: 0; }
+    .viewPanel .folderPanel { width: 200px; border-right: solid 1px #ddd; overflow: auto; }
+    .viewPanel .listPanel { left: 201px; overflow: auto; }
+
+
+
+
+/* @group page components
+    individual pages
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* Common Button Sytle */
+.btn { -moz-user-select: none; background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15) 40%, rgba(0, 0, 0, 0)); border: medium none rgba(0, 0, 0, 0); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.15); color: rgba(0, 0, 0, 0.8); cursor: pointer; display: inline-block; font-size: 100%; line-height: normal; padding: 0.3em 1.5em 0.3em; text-align: center; text-decoration: none; transition: box-shadow 0.03s linear 0s; vertical-align: baseline; white-space: nowrap; }
+.btn, a.btn, a.btn:visited { background-color: #AC1817; color: #FFFFFF; font-size: 12px; font-weight: normal; outline: 0 none; transition: background-color 0.2s linear 0s; }
+    .btn:hover, a.btn:hover { background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15)); }
+
+.btnCmdPanel { border: solid 1px #888; }
+    .btnCmdPanel li { float: left; }
+        .btnCmdPanel li a { display: block; border-right: solid 1px #888; }
+            .btnCmdPanel li a.last { border-right: 0; }
+
+.pageHeader { background: #fafafa; padding: 5px; border-bottom: solid 1px #f5f5f5; }
+
+/* Table Style */
+.tbl { width: 100%; }
+    .tbl .cCol { text-align: center; }
+    .tbl th { background: linear-gradient(to bottom, #FFFFFF 0px, #F2F2F2 100%) repeat-x scroll 0 0 rgba(0, 0, 0, 0); font-weight: bold; text-align: left; border: solid 1px #e3e3e3; }
+        .tbl th.first { border-left: 0; }
+    .tbl td { border-bottom: solid 1px #f3f3f3; }
+    .tbl tr:hover, .tbl tr.selected { background-color: #f5f5f5; font-weight: normal; }
+
+/* Tree Style */
+.tree, .tree ul { padding: 0; margin: 5px 0; list-style: none; }
+    .tree .hitarea { background: url(img/arrows.png) 0 0 no-repeat; height: 16px; width: 16px; margin-left: -16px; float: left; cursor: pointer; }
+* html .hitarea { display: inline; float: none; }
+.tree li { margin: 0; padding: 2px 0 2px 16px; }
+.tree .hover { color: red; cursor: pointer; }
+.tree .open-hitarea { background-position: -14px 0px; }
+.tree .closed-hitarea { background-position: 0 0; }
+span.folder { padding-left: 19px; background: url(img/folder.png) no-repeat 0 50%; }
+
+
+
+
+/* @group overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/

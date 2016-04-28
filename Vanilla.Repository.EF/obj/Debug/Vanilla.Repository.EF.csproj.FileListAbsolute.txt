@@ -1,0 +1,13 @@
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\Vanilla.Repository.EF.dll
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\Vanilla.Repository.EF.pdb
+D:\Project\Vanilla\Vanilla.Repository.EF\obj\Debug\Vanilla.Repository.EF.dll
+D:\Project\Vanilla\Vanilla.Repository.EF\obj\Debug\Vanilla.Repository.EF.pdb
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\EntityFramework.dll
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\EntityFramework.xml
+D:\Project\Vanilla\Vanilla.Repository.EF\obj\Debug\Vanilla.Repository.EF.csprojResolveAssemblyReference.cache
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\Vanilla.Model.dll
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\Vanilla.Model.pdb
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\Vanilla.Infrastructure.dll
+D:\Project\Vanilla\Vanilla.Repository.EF\bin\Debug\Vanilla.Infrastructure.pdb

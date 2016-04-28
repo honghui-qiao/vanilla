@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="pageHeader">
+    <a class="btn" href="Item/Create">New</a>
+    <a class="btn" href="#">Edit</a>
+    <a class="btn" href="#">Delete</a>
+</div>
+<div>
+    @Html.Action("ItemList", "Item")
+</div>
+
+

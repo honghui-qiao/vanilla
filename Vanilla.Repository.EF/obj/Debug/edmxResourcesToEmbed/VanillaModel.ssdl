@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Vanilla.Repository.EF.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VanillaRepositoryEFStoreContainer">
+    <EntitySet Name="content_Category" EntityType="Vanilla.Repository.EF.Store.content_Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="content_Comment" EntityType="Vanilla.Repository.EF.Store.content_Comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="content_Item" EntityType="Vanilla.Repository.EF.Store.content_Item" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Category_Category" Association="Vanilla.Repository.EF.Store.FK_Category_Category">
+      <End Role="content_Category" EntitySet="content_Category" />
+      <End Role="content_Category1" EntitySet="content_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Comment" Association="Vanilla.Repository.EF.Store.FK_Comment_Comment">
+      <End Role="content_Comment" EntitySet="content_Comment" />
+      <End Role="content_Comment1" EntitySet="content_Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Item" Association="Vanilla.Repository.EF.Store.FK_Comment_Item">
+      <End Role="content_Item" EntitySet="content_Item" />
+      <End Role="content_Comment" EntitySet="content_Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Category" Association="Vanilla.Repository.EF.Store.FK_Item_Category">
+      <End Role="content_Category" EntitySet="content_Category" />
+      <End Role="content_Item" EntitySet="content_Item" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="content_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="ParentCategoryID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="content_Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ParentCommentID" Type="uniqueidentifier" />
+    <Property Name="Body" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="AddedDate" Type="datetime" Nullable="false" />
+    <Property Name="ItemID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="content_Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="Abstract" Type="nvarchar" MaxLength="256" />
+    <Property Name="AddedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CategoryID" Type="uniqueidentifier" />
+  </EntityType>
+  <Association Name="FK_Category_Category">
+    <End Role="content_Category" Type="Vanilla.Repository.EF.Store.content_Category" Multiplicity="0..1" />
+    <End Role="content_Category1" Type="Vanilla.Repository.EF.Store.content_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="content_Category1">
+        <PropertyRef Name="ParentCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Comment">
+    <End Role="content_Comment" Type="Vanilla.Repository.EF.Store.content_Comment" Multiplicity="0..1" />
+    <End Role="content_Comment1" Type="Vanilla.Repository.EF.Store.content_Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="content_Comment1">
+        <PropertyRef Name="ParentCommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Item">
+    <End Role="content_Item" Type="Vanilla.Repository.EF.Store.content_Item" Multiplicity="1" />
+    <End Role="content_Comment" Type="Vanilla.Repository.EF.Store.content_Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Item">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="content_Comment">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Category">
+    <End Role="content_Category" Type="Vanilla.Repository.EF.Store.content_Category" Multiplicity="0..1" />
+    <End Role="content_Item" Type="Vanilla.Repository.EF.Store.content_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="content_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="content_Item">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

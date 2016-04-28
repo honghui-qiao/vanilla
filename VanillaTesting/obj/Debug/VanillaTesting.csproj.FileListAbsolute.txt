@@ -1,0 +1,16 @@
+D:\Project\Vanilla\VanillaTesting\bin\Debug\VanillaTesting.exe.config
+D:\Project\Vanilla\VanillaTesting\bin\Debug\VanillaTesting.exe
+D:\Project\Vanilla\VanillaTesting\bin\Debug\VanillaTesting.pdb
+D:\Project\Vanilla\VanillaTesting\bin\Debug\Vanilla.Repository.EF.dll
+D:\Project\Vanilla\VanillaTesting\bin\Debug\Vanilla.Model.dll
+D:\Project\Vanilla\VanillaTesting\bin\Debug\Vanilla.Infrastructure.dll
+D:\Project\Vanilla\VanillaTesting\bin\Debug\EntityFramework.dll
+D:\Project\Vanilla\VanillaTesting\bin\Debug\Vanilla.Repository.EF.pdb
+D:\Project\Vanilla\VanillaTesting\bin\Debug\Vanilla.Model.pdb
+D:\Project\Vanilla\VanillaTesting\bin\Debug\Vanilla.Infrastructure.pdb
+D:\Project\Vanilla\VanillaTesting\bin\Debug\EntityFramework.xml
+D:\Project\Vanilla\VanillaTesting\obj\Debug\VanillaTesting.csprojResolveAssemblyReference.cache
+D:\Project\Vanilla\VanillaTesting\obj\Debug\VanillaTesting.exe
+D:\Project\Vanilla\VanillaTesting\obj\Debug\VanillaTesting.pdb
+D:\Project\Vanilla\VanillaTesting\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Vanilla\VanillaTesting\bin\Debug\EntityFramework.SqlServer.xml

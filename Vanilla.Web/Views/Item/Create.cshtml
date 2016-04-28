@@ -1,0 +1,30 @@
+﻿@model Vanilla.Service.ViewModel.ItemCreationVM
+
+@{
+    ViewBag.Title = "Create Item";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Creat Item</legend>
+        @Html.LabelFor(x => x.FolderId, "Folder")
+        <div>
+            @Html.DropDownListFor(x => x.FolderId, Model.Folders)
+        </div>
+        @Html.LabelFor(x => x.Title)
+        <div>
+            @Html.TextBoxFor(x => x.Title)
+        </div>
+        @Html.LabelFor(x => x.Abstract)
+        <div>
+            @Html.TextBoxFor(x => x.Abstract)
+        </div>
+        @Html.LabelFor(x => x.Body)
+        <div>
+            @Html.TextBoxFor(x => x.Body)
+        </div>
+        <input class="x-btn" type="submit" value="Submit" />
+    </fieldset>
+}

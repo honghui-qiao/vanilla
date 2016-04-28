@@ -1,0 +1,31 @@
+﻿@using Vanilla.Service.ViewModel;
+
+@model FolderTreeViewModel
+
+@helper TreeView(IEnumerable<Vanilla.Service.ViewModel.FolderView> folders)
+{
+    <ul class="tree">
+        @foreach (var c in folders)
+        {
+            if (c.ChildFolders.Count() > 0)
+            {  
+            <li id="@c.Id" class="open @if (c.Id == Model.SelectedFolderId)
+                                       { <text>selected</text> }">
+                <a href="#"><span class="folder">@c.FolderName</span></a>
+                <ul>
+                    @TreeView(c.ChildFolders)
+                </ul>
+            </li>
+            }
+            else
+            {
+            <li id="@c.Id" class="@if (c.Id == Model.SelectedFolderId)
+                                  { <text>selected</text> }">
+                <a href="#"><span class="folder">@c.FolderName</span></a>
+            </li>
+            }
+        }
+    </ul>  
+}
+
+@TreeView(Model.Folders)

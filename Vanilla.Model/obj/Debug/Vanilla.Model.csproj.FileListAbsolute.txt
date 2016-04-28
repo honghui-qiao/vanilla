@@ -1,0 +1,7 @@
+D:\Project\Vanilla\Vanilla.Model\bin\Debug\Vanilla.Model.dll
+D:\Project\Vanilla\Vanilla.Model\bin\Debug\Vanilla.Model.pdb
+D:\Project\Vanilla\Vanilla.Model\bin\Debug\Vanilla.Infrastructure.dll
+D:\Project\Vanilla\Vanilla.Model\bin\Debug\Vanilla.Infrastructure.pdb
+D:\Project\Vanilla\Vanilla.Model\obj\Debug\Vanilla.Model.csprojResolveAssemblyReference.cache
+D:\Project\Vanilla\Vanilla.Model\obj\Debug\Vanilla.Model.dll
+D:\Project\Vanilla\Vanilla.Model\obj\Debug\Vanilla.Model.pdb

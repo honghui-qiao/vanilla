@@ -1,0 +1,4 @@
+D:\Project\Vanilla\Vanilla.Infrastructure\bin\Debug\Vanilla.Infrastructure.dll
+D:\Project\Vanilla\Vanilla.Infrastructure\bin\Debug\Vanilla.Infrastructure.pdb
+D:\Project\Vanilla\Vanilla.Infrastructure\obj\Debug\Vanilla.Infrastructure.dll
+D:\Project\Vanilla\Vanilla.Infrastructure\obj\Debug\Vanilla.Infrastructure.pdb

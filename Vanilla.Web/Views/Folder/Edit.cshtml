@@ -1,0 +1,21 @@
+﻿@model Vanilla.Service.ViewModel.FolderView
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        FolderName:
+        @Html.TextBoxFor(x => x.FolderName)
+    </div>
+    <div>
+        Description:
+        @Html.TextBoxFor(x => x.Description)
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+}

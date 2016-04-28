@@ -1,0 +1,47 @@
+﻿@using Vanilla.Controller.ViewModel;
+
+@model ItemActionPageView
+@{
+    ViewBag.Title = "ItemAction";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ItemAction</h2>
+
+@using (Html.BeginForm("Create", "Item", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Add New Item</legend>
+
+        @Html.LabelFor(m => m.Item.Title, "My Title")
+        <div>
+            @Html.TextBoxFor(m => m.Item.Title)
+        </div>
+        @Html.Label("Abstract")
+        <div>
+            @Html.TextBoxFor(m => m.Item.Abstract)
+        </div>
+        @Html.Label("Body")
+        <div>
+            @Html.TextAreaFor(m => m.Item.Body)
+        </div>
+        @Html.Label("AddedDate", "Added Date")
+        <div>
+            @Html.TextBoxFor(m => m.Item.AddedDate)
+        </div>
+        @Html.Label("UpdatedDate", "Updated Date")
+        <div>
+            @Html.TextBoxFor(m => m.Item.UpdatedDate)
+        </div>
+        <div>
+            <input type="submit" class="btn" value="Create" />
+        </div>
+        <div>
+            @Html.ActionLink("Back to home", "Index", "Home")
+        </div>
+    </fieldset>
+}
+

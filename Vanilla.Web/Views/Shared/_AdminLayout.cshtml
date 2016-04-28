@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/css/default/main.css" rel="stylesheet" />
+    <link href="~/css/default/layout.css" rel="stylesheet" />
+</head>
+<body class="x-layout">
+    <div data-options="region:'north',border:false" class="header">
+        <div class="nav">
+            <ul>
+                <li><a href="~/Home">Home</a></li>
+                <li><a href="~/Account/User">User Manage</a></li>
+                <li><a href="~/Account/Role">Role Manage</a></li>
+            </ul>
+        </div>
+        <div class="userPanel">
+        </div>
+    </div>
+    <div data-options="region:'west', split:true" class="w8" title="Folder Tree">
+        @Html.Action("FolderTree", "Folder")
+    </div>
+    <div data-options="region:'center'">
+        @RenderBody()
+    </div>
+
+
+
+    <script src="~/javascript/jquery-1.10.2.min.js"></script>
+    <script src="~/javascript/jquery.parser.js"></script>
+    <script src="~/javascript/jquery.panel.js"></script>
+    <script src="~/javascript/jquery.resizable.js"></script>
+    <script src="~/javascript/jquery.layout.js"></script>
+</body>
+</html>
